@@ -1,54 +1,67 @@
-# 自动化巡检管理平台
+# Automated Inspection Management Platform
 
-## 📖 简介
+## 📖 Introduction
 
-本平台是一个面向金融机构及复杂 IT 系统的**自动化巡检管理平台**，用于替代传统“人工战术”式的系统巡检。通过脚本化、编排化的自动任务，对服务器、数据库、中间件、网络设备等资源进行持续监测，自动生成巡检报告并发出升级通知，显著提升运维效率、降低漏检/错检风险，保障系统安全与稳定。
+This platform is an **automated inspection management system** designed for financial institutions and complex IT environments. It replaces traditional manual inspection methods with script-based, orchestrated automated tasks. It continuously monitors servers, databases, middleware, network devices, and other resources, automatically generates inspection reports, and sends upgrade notifications. This significantly improves operational efficiency, reduces missed/false detections, and enhances system security and stability.
 
-## 🎯 背景与痛点
+## 🎯 Background & Pain Points
 
-- **管理效率低下**：重复性工作多，人力消耗大，容易出现漏检、错检。
-- **安全风险高**：金融系统是攻击目标，人工巡检难以及时发现配置变更、证书过期、端口异常等隐患。
-- **数据分析不足**：传统方式缺乏对巡检数据的挖掘，无法提前发现潜在故障。
+- **Low efficiency**: Repetitive tasks consume significant manpower, prone to omissions and errors.
+- **High security risks**: Financial systems are prime targets; manual inspections often fail to detect configuration changes, certificate expirations, or port anomalies in time.
+- **Insufficient data analysis**: Traditional methods lack the ability to mine inspection data and identify potential failures early.
 
-本平台通过自动化技术实现设备持续监测、快速识别问题并采取应对措施，最大化系统可用性。
+This platform uses automation to achieve continuous monitoring, rapid problem identification, and timely responses, maximizing system availability.
 
-## ✨ 核心功能
+## ✨ Core Features
 
-| 功能模块 | 说明 |
-|---------|------|
-| **资源管理** | 批量导入/手工添加应用系统、中间件、网络设备等巡检资源 |
-| **作业管理** | 提供本地及远程巡检脚本，支持语法检查、敏感关键字检查 |
-| **编排管理** | 按脚本顺序对同一资源内的巡检过程进行可视化编排 |
-| **巡检任务** | 支持人工触发或系统自动定时巡检，结果登记与通知 |
-| **巡检报告** | 系统自动生成各资源的详细巡检报告 |
-| **通知公告** | 发现证书、应用系统等需升级时自动发出升级通知 |
+| Module | Description |
+|--------|-------------|
+| **Resource Management** | Batch import / manually add application systems, middleware, network devices, etc. |
+| **Job Management** | Provide local and remote inspection scripts, support syntax check and sensitive keyword check |
+| **Orchestration Management** | Visually orchestrate inspection processes for the same resource by script order |
+| **Inspection Tasks** | Support manual or scheduled automatic inspections, result logging, and notifications |
+| **Inspection Reports** | Automatically generate detailed inspection reports for each resource |
+| **Notifications** | Automatically send upgrade alerts when certificates or applications need updates |
 
-## 🖥️ 支持的资源类型
+## 🖥️ Supported Resource Types
 
-### 平台/操作系统
-- AIX、Windows、Linux（Redhat/麒麟等）、UnixWare、HP-Unix、AS400
-- 硬件、网络设备、存储、虚拟化云平台
+### Platforms / OS
+- AIX, Windows, Linux (Redhat/Kylin, etc.), UnixWare, HP-Unix, AS400
+- Hardware, network devices, storage, virtualization, cloud platforms
 
-### 数据库与中间件
-- **数据库**：MySQL、Oracle、DB2、PostgreSQL、Redis
-- **中间件**：WebLogic、WAS、MQ、Kafka、Nginx、Tomcat、IHS
+### Databases & Middleware
+- **Databases**: MySQL, Oracle, DB2, PostgreSQL, Redis
+- **Middleware**: WebLogic, WAS, MQ, Kafka, Nginx, Tomcat, IHS
 
-### 自动化作业类型
-- **脚本作业**：Shell、bat、Python
-- **文件作业**：增删查改、MD5校验、解析
-- **数据库作业**：SQL、存储过程执行
-- **FTP作业**：常用FTP操作
+### Automation Job Types
+- **Script jobs**: Shell, batch, Python
+- **File jobs**: create/delete/modify/query, MD5 checksum, parsing
+- **Database jobs**: SQL, stored procedure execution
+- **FTP jobs**: common FTP operations
 
-## 🔍 典型检查项示例
+## 🔍 Typical Inspection Items
 
-- **操作系统**：profile、hosts、sudoers、passwd、group、systeminfo、补丁版本、磁盘/交换空间、逻辑卷、双机服务、网络连接、系统性能、配置文件变更
-- **数据库**：版本、进程状态、应用连接、实例配置、HADR状态
-- **中间件**：配置文件（如 httpd.conf、plugin-cfg.xml）、服务状态、端口监听、日志检查
-- **网络设备**：CPU/内存利用率、设备邻接关系、路由表、日志告警、堆叠/HA状态、温度/电源/风扇参数
-- **负载均衡/防火墙**：运行状态、版本信息、配置备份、NAT连接数、冗余协议状态
+- **Operating System**: profile, hosts, sudoers, passwd, group, systeminfo, patch version, disk/swap space, logical volumes, HA/cluster services, network status, system performance, configuration file changes
+- **Databases**: version, process status, application connections, instance configuration, HADR status
+- **Middleware**: configuration files (e.g., httpd.conf, plugin-cfg.xml), service status, port listening, log checks
+- **Network Devices**: CPU/memory usage, neighbor relationships, routing tables, log alerts, stack/HA status, temperature/power/fan parameters
+- **Load Balancers / Firewalls**: operational status, version info, config backups, NAT connection count, redundancy protocol status
 
-## 📊 巡检驾驶舱与脚本编排
+## 📊 Inspection Dashboard & Orchestration
 
-- 提供可视化巡检驾驶案例图，全局掌握系统健康度
-- 支持巡检脚本编写与调试（案例图参考）
-- 支持巡检任务的灵活编排，按顺序组合执行多种检查
+- Visual inspection dashboard for overall system health
+- Support for writing and debugging inspection scripts
+- Flexible orchestration to combine multiple checks in sequence
+
+## 🚀 Quick Start
+
+### Requirements
+- Linux / Windows server
+- Python 3.6+ or Bash environment (depending on script type)
+
+### Installation
+```bash
+git clone https://github.com/yourname/auto-inspection-platform.git
+cd auto-inspection-platform
+# Configure database connection and resource inventory as per documentation
+python manage.py init
