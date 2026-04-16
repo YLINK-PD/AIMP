@@ -53,15 +53,3 @@ This platform uses automation to achieve continuous monitoring, rapid problem id
 - Support for writing and debugging inspection scripts
 - Flexible orchestration to combine multiple checks in sequence
 
-## 🚀 Quick Start
-
-### Requirements
-- Linux / Windows server
-- Python 3.6+ or Bash environment (depending on script type)
-
-### Installation
-```bash
-git clone https://github.com/yourname/auto-inspection-platform.git
-cd auto-inspection-platform
-# Configure database connection and resource inventory as per documentation
-python manage.py init
